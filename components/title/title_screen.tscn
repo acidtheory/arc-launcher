@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://cxfhyn0ewtt2o"]
+
+[ext_resource type="Script" uid="uid://h76prh5g6dc5" path="res://components/title/title_screen.gd" id="1_ol4ae"]
+[ext_resource type="FontFile" uid="uid://dyf322gl5shkf" path="res://assets/font/Inter_28pt-Black.ttf" id="1_u1by1"]
+[ext_resource type="FontFile" uid="uid://d1hjqc4al7txb" path="res://assets/font/Inter_28pt-Medium.ttf" id="2_1svmu"]
+[ext_resource type="FontFile" uid="uid://djbyhggpolgul" path="res://assets/font/Inter_28pt-Light.ttf" id="3_5op0f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ixgms"]
+font = ExtResource("1_u1by1")
+font_size = 72
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5op0f"]
+font = ExtResource("2_1svmu")
+font_size = 32
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ol4ae"]
+font = ExtResource("3_5op0f")
+font_size = 24
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gge3d"]
+font = ExtResource("1_u1by1")
+font_size = 72
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Control" unique_id=1088758507]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ol4ae")
+
+[node name="VideoPlayer" type="VideoStreamPlayer" parent="." unique_id=1844352115]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+autoplay = true
+loop = true
+
+[node name="VideoDimmer" type="ColorRect" parent="." unique_id=1634097150]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5019608)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=431510144]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=501086259]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="GameTitle" type="Label" parent="MarginContainer/VBoxContainer" unique_id=591356511]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Titulo del juego"
+label_settings = SubResource("LabelSettings_ixgms")
+
+[node name="GameDesc" type="Label" parent="MarginContainer/VBoxContainer" unique_id=319791936]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1536, 89)
+layout_mode = 2
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+label_settings = SubResource("LabelSettings_5op0f")
+autowrap_mode = 2
+
+[node name="Instructions" type="Label" parent="MarginContainer" unique_id=923402066]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Izquierda/Derecha - Cambiar Juego"
+label_settings = SubResource("LabelSettings_ol4ae")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="TopLogo" type="Label" parent="MarginContainer" unique_id=24539990]
+layout_mode = 2
+size_flags_vertical = 0
+text = "ARCUMAI"
+label_settings = SubResource("LabelSettings_gge3d")
+horizontal_alignment = 1
+vertical_alignment = 2
